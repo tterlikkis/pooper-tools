@@ -1,5 +1,6 @@
 package com.github.poopertools;
 
+import com.github.poopertools.classes.CopperPickaxe;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -52,6 +53,11 @@ public class PooperTools
     // Creates a new food item with the id "poopertools:example_id", nutrition 1 and saturation 2
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
             .alwaysEat().nutrition(1).saturationMod(2f).build())));
+
+    /** Start our stuff */
+    public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", () -> new CopperPickaxe(new Item.Properties()));
+
+    /** End our stuff */
 
     // Creates a creative tab with the id "poopertools:example_tab" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
