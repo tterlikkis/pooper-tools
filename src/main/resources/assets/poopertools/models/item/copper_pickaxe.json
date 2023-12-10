@@ -1,0 +1,26 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "poopertools:item/copper_pickaxe"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "damage": 0.25
+      },
+      "model" : "poopertools:item/pickaxe/exposed_copper_pickaxe"
+    },
+    {
+      "predicate": {
+        "damage": 0.5
+      },
+      "model": "poopertools:item/pickaxe/weathered_copper_pickaxe"
+    },
+    {
+      "predicate": {
+        "damage": 0.75
+      },
+      "model": "poopertools:item/pickaxe/oxidized_copper_pickaxe"
+    }
+  ]
+}

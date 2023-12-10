@@ -13,13 +13,14 @@ import org.jetbrains.annotations.NotNull;
 public class CopperPickaxe extends PickaxeItem {
     private static final TagKey<Block> blocks = BlockTags.MINEABLE_WITH_PICKAXE;
     private final static int attackDamage = 3;
-    private final static float baseSpeed = 1.2f;
+    private final static float attackSpeed = 1.2f;
+    private final static float baseSpeed = 4f;
     private static float speed = baseSpeed;
     private final static int maxDamage = Tiers.STONE.getUses();
 
     // COPPER Tiered PickaxeItem defaults to 2 Damage and 4 Speed
     public CopperPickaxe() {
-        super(Tiers.STONE, attackDamage - 2, baseSpeed - 4f, new Item.Properties());
+        super(Tiers.STONE, attackDamage - 2, attackSpeed - 4f, new Item.Properties());
     }
 
     @Override
