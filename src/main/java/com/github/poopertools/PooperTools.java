@@ -1,5 +1,6 @@
 package com.github.poopertools;
 
+import com.github.poopertools.item.ModCreativeModeTabs;
 import com.github.poopertools.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.*;
@@ -36,7 +37,7 @@ public class PooperTools
         // Register the Deferred Register to the mod event bus so items get registered
         ModItems.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
-//        CREATIVE_MODE_TABS.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
