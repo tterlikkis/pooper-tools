@@ -1,6 +1,7 @@
 package com.github.poopertools.item;
 
 import com.github.poopertools.PooperTools;
+import com.github.poopertools.item.custom.CopperAxe;
 import com.github.poopertools.item.custom.CopperPickaxe;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
@@ -22,6 +23,7 @@ public class ModItems {
 
     // PickaxeItem defaults to 1 Damage and 4 Speed
     public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", CopperPickaxe::new);
+    public static final RegistryObject<Item> COPPER_AXE = ITEMS.register("copper_axe", CopperAxe::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

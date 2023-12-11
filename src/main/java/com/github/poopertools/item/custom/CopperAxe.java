@@ -1,5 +1,6 @@
 package com.github.poopertools.item.custom;
 
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -10,17 +11,18 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class CopperPickaxe extends PickaxeItem {
-    private static final TagKey<Block> blocks = BlockTags.MINEABLE_WITH_PICKAXE;
-    private static final int attackDamage = 3;
-    private static final float attackSpeed = 1.2f;
+public class CopperAxe extends AxeItem {
+
+    private static final TagKey<Block> blocks = BlockTags.MINEABLE_WITH_AXE;
+
+    private static final int attackDamage = 9;
+    private static final float attackSpeed = 0.8f;
     private static final float baseSpeed = 4f;
     private static float speed = baseSpeed;
-    private final static int maxDamage = Tiers.STONE.getUses();
+    private static final int maxDamage = Tiers.STONE.getUses();
 
-    // COPPER Tiered PickaxeItem defaults to 2 Damage and 4 Speed
-    public CopperPickaxe() {
-        super(Tiers.STONE, attackDamage - 2, attackSpeed - 4f, new Item.Properties());
+    public CopperAxe() {
+        super(Tiers.STONE, 0, 0, new Item.Properties());
     }
 
     @Override
@@ -44,6 +46,7 @@ public class CopperPickaxe extends PickaxeItem {
     }
 
     private float getDynamicSpeed(float currentDamage) {
-         return baseSpeed * (1 + currentDamage / maxDamage);
+        return baseSpeed * (1 + currentDamage / maxDamage);
     }
+
 }

@@ -18,6 +18,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.pooper_tab"))
                     .displayItems((p_270258_, p_259752_) -> {
                         p_259752_.accept(ModItems.COPPER_PICKAXE.get());
+                        p_259752_.accept(ModItems.COPPER_AXE.get());
                     })
                     .build());
 
