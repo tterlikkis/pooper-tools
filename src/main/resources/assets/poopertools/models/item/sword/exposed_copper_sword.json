@@ -1,0 +1,26 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "poopertools:item/exposed_copper_sword"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "damage": 0.25
+      },
+      "model" : "poopertools:item/sword/exposed_copper_sword"
+    },
+    {
+      "predicate": {
+        "damage": 0.5
+      },
+      "model": "poopertools:item/sword/weathered_copper_sword"
+    },
+    {
+      "predicate": {
+        "damage": 0.75
+      },
+      "model": "poopertools:item/sword/oxidized_copper_sword"
+    }
+  ]
+}
