@@ -1,5 +1,9 @@
 {
   "item.poopertools.copper_pickaxe": "Copper Pickaxe",
+  "item.poopertools.copper_axe": "Copper Axe",
+  "item.poopertools.copper_hoe": "Copper Hoe",
+  "item.poopertools.copper_shovel": "Copper Shovel",
+  "item.poopertools.copper_sword": "Copper Sword",
 
   "creativetab.pooper_tab": "Pooper Tools"
 }

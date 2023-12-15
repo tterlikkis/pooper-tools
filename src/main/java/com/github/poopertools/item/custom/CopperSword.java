@@ -10,14 +10,16 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class CopperHoe extends HoeItem {
+public class CopperSword extends SwordItem {
     private static final TagKey<Block> blocks = BlockTags.MINEABLE_WITH_HOE;
-    private static final int attackDamage = 1;
-    private static final float attackSpeed = 2f;
+    private static final int attackDamage = 5;
+    private static final float attackSpeed = 1.6f;
     private static final float baseSpeed = 4f;
+    private static final float baseDamage = 5;
     private static float speed = baseSpeed;
+    private static float damage = baseDamage;
     private final static int maxDamage = Tiers.STONE.getUses();
-    public CopperHoe() {
+    public CopperSword() {
         super(Tiers.STONE, attackDamage - 2, attackSpeed - 4f, new Item.Properties());
     }
 
@@ -25,14 +27,14 @@ public class CopperHoe extends HoeItem {
     public boolean mineBlock(@NotNull ItemStack p_40998_, @NotNull Level p_40999_,
                              @NotNull BlockState p_41000_, @NotNull BlockPos p_41001_, @NotNull LivingEntity p_41002_) {
         boolean result = super.mineBlock(p_40998_, p_40999_, p_41000_, p_41001_, p_41002_);
-        speed = getDynamicSpeed(p_40998_.getDamageValue());
+        updateDamageAndSpeed(p_40998_.getDamageValue());
         return result;
     }
 
     @Override
     public boolean hurtEnemy(ItemStack p_40994_, LivingEntity p_40995_, LivingEntity p_40996_) {
         boolean result = super.hurtEnemy(p_40994_, p_40995_, p_40996_);
-        speed = getDynamicSpeed(p_40994_.getDamageValue());
+        updateDamageAndSpeed(p_40994_.getDamageValue());
         return result;
     }
 
@@ -41,8 +43,14 @@ public class CopperHoe extends HoeItem {
         return p_41005_.is(blocks) ? speed : 1f;
     }
 
-    private float getDynamicSpeed(float currentDamage) {
-        return baseSpeed * (1 + currentDamage / maxDamage);
+    @Override
+    public float getDamage() {
+        return damage;
     }
 
+    private void updateDamageAndSpeed(float currentDamage) {
+        float ratio = currentDamage / maxDamage;
+        speed = baseSpeed * (1 + ratio);
+        damage = baseDamage + ratio;
+    }
 }

@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 public class CopperAxe extends AxeItem {
-
     private static final TagKey<Block> blocks = BlockTags.MINEABLE_WITH_AXE;
 
     private static final int attackDamage = 9;
@@ -22,7 +21,7 @@ public class CopperAxe extends AxeItem {
     private static final int maxDamage = Tiers.STONE.getUses();
 
     public CopperAxe() {
-        super(Tiers.STONE, 0, 0, new Item.Properties());
+        super(Tiers.STONE, attackDamage - 2, attackSpeed - 4f, new Item.Properties());
     }
 
     @Override

@@ -10,15 +10,16 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class CopperHoe extends HoeItem {
+public class CopperShovel extends ShovelItem {
     private static final TagKey<Block> blocks = BlockTags.MINEABLE_WITH_HOE;
-    private static final int attackDamage = 1;
-    private static final float attackSpeed = 2f;
+    private static final int attackDamage = 3;
+    private static final float attackSpeed = 1f;
     private static final float baseSpeed = 4f;
     private static float speed = baseSpeed;
     private final static int maxDamage = Tiers.STONE.getUses();
-    public CopperHoe() {
-        super(Tiers.STONE, attackDamage - 2, attackSpeed - 4f, new Item.Properties());
+
+    public CopperShovel() {
+        super(Tiers.STONE, attackDamage - 1.5f, attackSpeed - 4f, new Item.Properties());
     }
 
     @Override
@@ -44,5 +45,4 @@ public class CopperHoe extends HoeItem {
     private float getDynamicSpeed(float currentDamage) {
         return baseSpeed * (1 + currentDamage / maxDamage);
     }
-
 }

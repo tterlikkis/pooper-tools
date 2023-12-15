@@ -19,6 +19,9 @@ public class ModCreativeModeTabs {
                     .displayItems((p_270258_, p_259752_) -> {
                         p_259752_.accept(ModItems.COPPER_PICKAXE.get());
                         p_259752_.accept(ModItems.COPPER_AXE.get());
+                        p_259752_.accept(ModItems.COPPER_HOE.get());
+                        p_259752_.accept(ModItems.COPPER_SHOVEL.get());
+                        p_259752_.accept(ModItems.COPPER_SWORD.get());
                     })
                     .build());
 
